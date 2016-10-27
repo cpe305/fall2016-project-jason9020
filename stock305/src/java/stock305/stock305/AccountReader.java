@@ -34,6 +34,7 @@ public class AccountReader {
       Account readAccount;
       
       try {
+    	  
          FileReader fReader = new FileReader(accountInfo);
          BufferedReader bReader = new BufferedReader(fReader);
          
