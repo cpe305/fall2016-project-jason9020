@@ -1,3 +1,4 @@
+package edu.calpoly.stock305;
 
 public class Stock {
    private String name;

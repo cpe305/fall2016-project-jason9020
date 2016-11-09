@@ -1,4 +1,4 @@
-package stock305.stock305;
+package edu.calpoly.stock305;
 
 /**
  * main driver runs the entire app

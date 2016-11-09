@@ -1,3 +1,5 @@
+package edu.calpoly.stock305;
+
 import java.io.File;
 import java.util.ArrayList;
 
