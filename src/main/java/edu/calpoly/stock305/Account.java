@@ -2,7 +2,12 @@ package edu.calpoly.stock305;
 
 
 
+import java.io.IOException;
 import java.util.ArrayList;
+
+import yahoofinance.Stock;
+import yahoofinance.quotes.stock.StockQuotesData;
+import yahoofinance.quotes.stock.StockQuotesRequest;
 
 public class Account {
    private String username;
@@ -31,7 +36,7 @@ public class Account {
    public String getPassword() {
       return password;
    }
-   
+ 
    public String getUsername() {
       return username;
    }
@@ -44,19 +49,25 @@ public class Account {
       this.username = username;
    }
    
-   public void addStock(Stock stock) {
+   //add a stock to the portfolio given a Stock object as input 
+   public void addStock(Stock stock) {	
+	  System.out.println("Stock " + stock.getSymbol() + " added to " + getUsername() + "'s portfolio");
       portfolio.add(stock);
    }
    
-   public void addStock(String stockName) {
-      Stock stock = new Stock(stockName);
+   //add a stock and update its' information 
+   public void addStock(String stockSymbol)  {
+	  Stock stock = new Stock(stockSymbol);
+	  
       portfolio.add(stock);
+	  System.out.println("Stock " + stock.getSymbol() + " added to " + getUsername() + "'s portfolio");      
    }
    
    public String toString() {
-      String stocks = "";
+	  String stocks = ""; 
+	   
       for (int i = 0; i < portfolio.size(); i++) {
-         stocks += portfolio.get(i).getName() + " ";
+         stocks += portfolio.get(i).getSymbol() + " ";
       }
          
       return getUsername() + " " + getPassword() + " " + stocks;

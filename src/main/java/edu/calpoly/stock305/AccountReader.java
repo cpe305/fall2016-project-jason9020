@@ -57,9 +57,7 @@ public class AccountReader {
             else {
                System.out.println("INVALID ACCOUNT");
             }
-         }
-         
-         bReader.close();
+         }         
       }
       catch (FileNotFoundException e) {
          System.out.println("Account info file not found.");
